@@ -1,0 +1,13 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+		Scrivere una function che, dato un sistema lineare sovradeterminato Ax = b, con $A \in R^{m+n}$, m > n, rank(A) = n e $b \in R^{m}$, preso come input b e l'output dell'Algoritmo 3.8 del libro (matrice A riscritta con la parte significativa di R e la parte significativa dei vettori di Householder normalizzati con la prima componente unitaria), ne calcoli efficientemente la soluzione nel senso dei minimi quadrati.
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	Si riporta l'Algoritmo 3.8 del libro, relativo alla fattorizzazione QR di Householder:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/QRFatt.m}
+	Mentre la function utilizzata per risolvere il sistema nel senso dei minimi quadrati è la seguente:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/SolveLeastSquares.m}
+	Si vuole quindi calcolare la soluzione del sistema lineare $\hat{R}$ x = b .Per fare ciò si ricostruire la matrice $Q^{t}$ a partire dalla matrice QR riscritta sui vettori di Householder. Quindi si ricava la matrice $\hat{R}$ per mezzo della funzione $triu$ che ci restituisce la sotto matrice triangolare superiore di A, ed infine si ricava il vettore g1, moltiplicando le prime n componenti di $Q^{t}$ per il vettore colonna b. Si richiama dunque la funzione per la risoluzione della matrice triangolare superiore con parametri R (cioè $\hat{R}$) e qTb (cioè g1).
+\end{flushleft}

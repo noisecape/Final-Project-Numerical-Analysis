@@ -1,0 +1,56 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+		Verificare che entrambe le seguenti successioni convergono a $\sqrt{3}$, (riportare le successive approssimazioni in una tabella a due colonne, una per ciascuna successione),\\
+		\begin{center}
+			\begin{Large}
+			$x_{k+1} = \frac{(x_{k} + \frac{3}{x_{k}})}{2}, x_{0} = 3;$\\[0.3cm]
+			$x_{k+1} = \frac{3+x_{k-1}x_{x}}{x_{k-1}+x_{k}}, x_{0} = 3; x_{1} = 2$\\[0.3cm]
+			\end{Large}
+		\end{center}
+		Per ciascuna delle due successioni, dire quindi dopo quante iterazioni si ottiene un'approssimazione con un errore assoluto minore o uguale a $10^{-12}$ in valore assoluto.
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.3cm]
+	\begin{Large}
+	$\bullet x_{k+1} = \frac{(x_{k} + \frac{3}{x_{k}})}{2}, x_{0} = 3;$\\[0.3cm]
+	\end{Large}
+	\lstinputlisting[language=Matlab]{Codici/Cap1/Esercizio6.m}
+	Il codice precedente restituisce i seguenti risultati: 
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+				$k$ & $x_{k}$&$\epsilon_{k} $\\
+			\hline
+    			$0$ & $3.000000000000000$ & $ \epsilon_{0} = 1.267949e+00$\\
+    			$1$ & $2.00000000000000$ & $ \epsilon_{1} = 2.679492e-01$\\
+    			$2$ & $1.750000000000000$ & $\epsilon_{2} = 1.794919e-02$\\
+    			$3$ & $1.732143000000000$ & $\epsilon_{3} = 9.204957e-05$\\
+    			$4$ & $1.732051000000000$ & $\epsilon_{4} = 2.445850e-09$\\
+    			$5$ & $1.732051000000000$ & $\epsilon_{5} = 0e+00$\\
+			\hline
+		\end{tabular}
+	\end{center}
+	Si vede quindi che per k >= 5 si ha un errore assoluto che equivale a 0, ovvero una quantita  minore o uguale di $10^{-12}$\\[0.3cm]
+	\begin{Large}
+	$\bullet x_{k+1} = \frac{3+x_{k-1}x_{x}}{x_{k-1}+x_{k}}, x_{0} = 3; x_{1} = 2$\\[0.3cm]
+	\end{Large}
+	\lstinputlisting[language=Matlab]{Codici/Cap1/Esercizio6_2.m}
+	Il codice precedente restituisce i seguenti risultati: 
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+				$k$ & $x_{k}$&$\epsilon_{k} $\\
+			\hline
+    			$0$ & $3.000000000000000$ & $ \epsilon_{0} = 1.267949e+00$\\
+    			$1$ & $2.00000000000000$ & $ \epsilon_{1} = 2.679492e-01$\\
+    			$2$ & $1.80000000000000$ & $\epsilon_{2} = 6.794919e-02$\\
+			$3$ & $1.736842000000000$ & $\epsilon_{3} = 4.791298e-03$\\
+    			$4$ & $1.732143000000000$ & $\epsilon_{4} = 9.204957e-05$\\
+    			$5$ & $1.7320510000000$ & $\epsilon_{5} = 1.271372e-07$\\
+			$6$ & $1.7320510000000$ & $\epsilon_{6} = 3.378631e-12$\\
+			\hline
+		\end{tabular}
+	\end{center}
+	Si vede quindi che per k >= 6 si ha un errore assoluto che equivale a 0, ovvero una quantita  minore o uguale di $10^{-12}$\\[0.3cm]
+	\end{flushleft}

@@ -1,0 +1,49 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Definire una procedura iterativa basata sul metodo delle secanti sempre per approssimare $\sqrt{\alpha}$, per un assegnato $\alpha > 0$. Completare la tabella precedente aggiungendovi i risultati ottenuti con tale procedura partendo da $x_{0} = 5$ e $x_{1} = 3$. Commentare i risultati riportati in tabella.
+	}}\\
+
+Come visto nel precedente esercizio occorre utilizzare la funzione $f(x) = x^2 - \alpha$\\
+L'iterazione del metodo delle Secanti utilizzando questa funzione diventa:
+	\[
+	x_{i+1} = \frac{f(x_i)x_{i-1}-f(x_{i-1})x_i}{f(x_i)-f(x_{i-1})} =
+	\]
+	\[
+	= \frac{(x_i^2-\alpha)x_{i-1}-(x_{i-1}^2-\alpha)x_i}{x_i^2-\alpha-x_{i-1}^2+\alpha}  =
+	\]
+	\[
+	= \frac{x_i^2x_{i-1}-\alpha x_{i-1}-x_{i-1}^2x_i+\alpha x_i}{x_i^2-x_{i-1}^2} =
+	\]
+	\[
+	= \frac{x_ix_{i-1}(x_i-x_{i-1})+\alpha (x_i-x_{i-1})}{(x_i-x_{i-1})(x_i+x_{i-1})} =
+	\]
+	\[
+	= \frac{(x_i-x_{i-1})(x_ix_{i-1}+\alpha)}{(x_i-x_{i-1})(x_i+x_{i-1})} =
+	\]
+	\[
+	= \frac{x_ix_{i-1}+\alpha}{x_i+x_{i-1}},\quad i=0,1,2,...
+	\]\\
+L'implementazione del metodo delle secanti in Matlab è la seguente:\\ 
+	\lstinputlisting[language=Matlab]{Codici/Cap2/secantiSolveEs5.m}
+Il seguente codice MatLab, riguarda la chiamata della funzione definita precedentemente, con $\alpha=x_0=5$, con $x_1=3$, con numero di passi massimi $imax=100$ e indice di tolleranza $tol_x=eps$ :\\
+	\lstinputlisting[language=Matlab]{Codici/Cap2/Es5_Cap2.m}
+restituisce i seguenti valori:\\
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+			$i$ & $x_i$ & $E_{ass}=\epsilon_i=|x_i-\sqrt{\alpha}| \quad \alpha=5$ \\
+		\hline
+    		$i=0$ & $x_0 = 5$ & $|\epsilon_0| = 2.763932022500210$\\
+    		$i=1$ & $x_1 = 3$ & $|\epsilon_1| = 0.763932022500210$\\
+    		$i=2$ & $x_2 = 2.500000000000000$ & $|\epsilon_2| = 0.263932022500210$\\
+    		$i=3$ & $x_3 = 2.272727272727273$ & $|\epsilon_3| = 0.36659295227483$\\
+    		$i=4$ & $x_4 = 2.238095238095238$ & $|\epsilon_4| = 0.00202760595448$\\
+    		$i=5$ & $x_5 = 2.236084452975048$ & $|\epsilon_5| = 1.647547525829296e-05$\\
+    		$i=6$ & $x_6 = 2.236067984964863$ & $|\epsilon_6| = 7.465073448287285e-09$\\
+    		$i=7$ & $x_7 = 2.236067977499817$ & $|\epsilon_7| = 2.753353101070388e-14$\\
+    		$i=8$ & $x_8 = 2.236067977499790$ & $|\epsilon_8| = 4.440892098500626e-16$\\
+    		$i=9$ & $x_9 = 2.236067977499790$ & $|\epsilon_9| = 0$\\
+    		$i=10$ & $x_{10} = 2.236067977499790$ & $|\epsilon_{10}| = 0$\\
+		\hline
+	\end{tabular}
+\end{center}

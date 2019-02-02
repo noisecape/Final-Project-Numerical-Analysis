@@ -1,0 +1,59 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+		Inserire due esempi di utilizzo della function implementata per il punto 8 e confrontare la soluzione ottenuta con quella fornita dal comando A$\backslash$b
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	Nel seguente codice si mostrano due esempi per l'esercizio 8:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/SoluzioneEs9Cap3.m}
+	$\bullet$\textbf{ESEMPIO 1}\\[0.5cm]
+	\begin{center}
+	$A1 = \begin{bmatrix}
+				3 & 2 & 1\\
+				1 & 2 & 3\\
+				1 & 2 & 1\\
+				2 & 1 & 2
+			\end{bmatrix}$\space,
+			$b1 = \begin{bmatrix}
+				10\\
+				10\\
+				10\\
+				10
+			\end{bmatrix}$\space, 
+			$x1 = A1\backslash b1 =  \begin{bmatrix}
+				1.000000000000002e+00\\
+				2.800000000000000e+00\\
+				1.399999999999998e+00
+			\end{bmatrix}$\\[0.5cm]
+			$rst1 = \begin{bmatrix}
+				1.399999999999999e+00\\
+				2.800000000000000e+00\\
+				1.400000000000001e+00
+			\end{bmatrix}$\\[0.5cm]
+		\end{center}
+		$\bullet$\textbf{ESEMPIO 2}\\[0.5cm]
+	\begin{center}
+	$A2 = \begin{bmatrix}
+				1 & 1 & 1\\
+				1 & 2 & 4\\
+				1 & -1 & 1\\
+				1 & -2 & 4
+			\end{bmatrix}$\space,
+			$b2 = \begin{bmatrix}
+				1\\
+				1\\
+				1\\
+				2
+			\end{bmatrix}$\space, $rst2 = \begin{bmatrix}
+				0.8333333333333331e-01\\
+				-0.2000000000000001e-01\\
+				1.666666666666668e-01
+			\end{bmatrix}$\\[0.5cm]
+			$x2 = A2\backslash b2 =  \begin{bmatrix}
+				0.8333333333333335e-01\\
+				-0.2000000000000000e-01\\
+				1.666666666666666e-01
+			\end{bmatrix}$
+		\end{center}
+\end{flushleft}

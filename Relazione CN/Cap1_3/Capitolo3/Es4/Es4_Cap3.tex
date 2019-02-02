@@ -1,0 +1,17 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Scrivere una function Matlab che, avendo in ingresso un vettore \textbf{b} contenente i termini noti del sistema lineare \textbf{Ax = b} con A sdp e l'output dell'Algoritmo 3.7 del libro (matrice A riscritta con la fattorizzazione LU con pivoting parziale e il vettore \textbf{p} delle permutazioni), ne calcoli efficientemente la soluzione.
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	Con il seguente codice Matlab si ricava la fattorizzazione A = LU con pivoting parziale
+	\lstinputlisting[language=Matlab]{Codici/Cap3/LUPivoting.m}
+	Si vuole risolvere il sistema Ax = b con A = LU. Per farlo utilizziamo il codice:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/LUPivotingSolve.m}
+	La soluzione sarà data quindi dalla risoluzione dei due sistemi lineari:\\[0.3cm]
+	$\bullet Ly = b$\\[0.1cm]
+	Si ricava dalla matrice A la sotto matrice triangolare inferiore a diagonale unitaria e si risolve tale sistema per mezzo dell'algoritmo di risoluzione \textbf{trisolveInf(A,b)}\\[0.3cm]
+	$\bullet Ux = y$\\[0.1cm]
+	Si ricava dalla matrice A la sotto matrice triangolare superiore e si risolve tale sistema per mezzo dell'algoritmo di risoluzione \textbf{trisolveSup(A,b)}\\[0.3cm]
+	\end{flushleft}

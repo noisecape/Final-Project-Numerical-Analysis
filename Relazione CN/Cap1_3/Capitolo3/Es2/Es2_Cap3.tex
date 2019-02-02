@@ -1,0 +1,39 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Utilizzare l'Algoritmo 3.6 del libro per stabilire se le seguenti matrici sono sdp o no,
+	\begin{center}
+		$A_{1} = \begin{bmatrix}
+				1 & -1 & 2 & 2\\
+				-1 & 5 & -14 & 2\\
+				2 & -14 & 42 & 2\\
+				2 & 2 & 2 & 65
+			\end{bmatrix}$,
+			$A_{2} = \begin{bmatrix}
+				1 & -1 & 2 & 2\\
+				-1 & 6 & -17 & 3\\
+				2 & -17 & 48 & -16\\
+				2 & 3 & -16 & 4
+			\end{bmatrix}$
+	\end{center}
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	L'algoritmo utilizzato per risolvere l'esercizio è quello della fattorizzazione $LDL^{T}$. Questo perchè grazie al Teorema 3.6 del libro, è noto che una matrice è sdp se e solo se questa è fattorizzabile $LDL^{T}$.\\Si riporta dunque il codice Matlab di tale fattorizzazione:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/LDLTFatt.m}
+	$\bullet A_{1}$\\[0.3cm]
+	Si richiama il precedente Algoritmo con la matrice $A_{1}$ come input. Si ottiene il seguente risultato:
+	\begin{center}
+		$A_{1} = \begin{bmatrix}
+				1 & -1 & 2 & 2\\
+				-1 & 4 & -14 & 2\\
+				2 & -3 & 2 & 2\\
+				2 & 1 & 5 & 7
+			\end{bmatrix}$
+		\end{center}
+		\newpage
+		$\bullet A_{2}$\\[0.3cm]
+	Si richiama il precedente Algoritmo con la matrice $A_{2}$ come input. In questo caso però la matrice non risulta essere fattorizzabile $LDL^{T}$ e dunque l'esecuzione stamperà il seguente errore:\\[0.4cm]
+		\textbf{Error using LDLTFatt (line 19)}\\	
+		\textbf{Matrice non sdp}\\
+	\end{flushleft}

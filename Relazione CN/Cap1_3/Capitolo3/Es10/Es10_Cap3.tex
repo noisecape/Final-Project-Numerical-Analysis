@@ -1,0 +1,26 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Scrivere una function che realizza il metodo di Newton per un sistema non lineare (prevedere un numero massimo di iterazioni e utilizzare il criterio di arresto basato sull'incremento in norma euclidea). Utilizzare la function costruita al punto 4 per la risoluzione del sistema lineare ad ogni iterazione.
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	Per la risoluzione dei sistemi non lineari, ovvero formato da equazioni del tipo
+	\begin{center}$F(y) = 0, F:\Omega \subseteq R^{n} \rightarrow R^{n}$ \end{center}
+	 si utilizza il metodo di Newton, cioè un metodo $iterarivo$ definito da\\[0.2cm]
+	\begin{center} $x^{k+1} = x^{k} - J_{F}(x^{k})^{-1}F(x^{k})$    k = 0,1,...\\[0.2cm]\end{center}
+	partendo da un'approssimazione $x^{0}$ assegnata. Inoltre $J_{F}(x)$ rappresenta la matrice Jacobiana, formata dalle derivate parziali:\\[0.5cm]
+	\begin{center}
+	$J_{F}(x) = \begin{bmatrix}
+				\frac{\partial f_{1}}{\partial x_{1}}(x) & \ldots  & \frac{\partial f_{1}}{\partial x_{n}}(x)\\
+				\vdots & \space & \vdots \\
+				\frac{\partial f_{n}}{\partial x_{1}}(x) & \ldots  & \frac{\partial f_{n}}{\partial x_{n}}(x)
+			\end{bmatrix}$
+			\end{center}
+			Di seguito si riporta il codice relativo alla soluzione dei sistemi non lineari per mezzo del metodo iterativo di Newton
+			\lstinputlisting[language=Matlab]{Codici/Cap3/solveNewtonNonLineare.m}
+			Ci riconduciamo quindi a risolvere il sistema lineare formato da 2 equazioni:\\
+			$\bullet J_{F}(x^{k})d^{k} = -F(x^{k})$\\[0.2cm]
+			$\bullet x^{k+1} = x^{k} + d^{k}$\\[0.5cm]
+			Pertanto la risoluzione di tale sistema lineare si riconduce alla risoluzione di una successione di sistemi lineare, dove ad ogni passo si necessita la fattorizzazione della matrice Jacobiana per mezzo dell'algoritmo di fattorizzazione LU con pivoting.
+	\end{flushleft} 

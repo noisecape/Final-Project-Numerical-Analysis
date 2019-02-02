@@ -1,0 +1,37 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Verificato che la funzione $f(x_{1},x_{2}) = x_{1}^{2}+ x_{2}^{3}- x_{1}x_{2}$ ha un punto di minimo relativo in (1/12, 1/6), costruire una tabella in cui si riportano il numero di iterazioni eseguite, e la norma euclidea dell'ultimo incremento e quella dell'errore con cui viene approssimato il risultato esatto utilizzando la function sviluppata al punto precedente per valori delle tolleranze pari a $10^{-t}$, con $t = 3, 6$. Utilizzare (1/2, 1/2) come punto di innesco. Verificare che la norma dell'errore è molto più piccola di quella dell'incremento (come mai?)
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	Ricapitolando abbiamo che:\\[0.5cm]
+	$\bullet F(x) = 0$, \space $F = \begin{bmatrix}
+		\frac{\partial f_{1}}{\partial x_{1}}\\[0.2cm]
+		\frac{\partial f_{1}}{\partial x_{2}}\\[0.2cm]
+		\end{bmatrix}$ = $\begin{bmatrix}
+		2x_{1} - x_{2}\\
+		3x_{2}^{2} - 1
+		\end{bmatrix}$ = $f$\\[0.2cm]
+	$\bullet x_{1} = \frac{1}{2}$\\[0.2cm]
+	$\bullet x_{2} = \frac{1}{2}$\\[0.2cm]
+	$\bullet J_{F} = \begin{bmatrix}
+		2-x_{2} & 2x_{1} -1\\
+		3x_{2}^{2}-1 & 6x_{2} - x_{1} \end{bmatrix}$\\[0.2cm]
+	$\bullet itmax = 1000$\\[0.2cm]
+	$\bullet tol = 10^{-t}, t = [3,6]$\\[0.2cm]
+	Si richiama quindi il seguente codice Matlab:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/solveNewtonNonLineare.m}
+	Il codice produce i seguenti risultati
+	\begin{center}
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+			$tol = 10^{-t}$ & it & $\|norma\|$ & $\| err \|$\\
+		\hline
+			$tol = 10^{-3}$ & 17 & 8.543066834330485e-04 & 0.003794501517081\\
+			$tol = 10^{-6}$ & 51 & 9.788751414570120e-07 & 4.480819013409465e-06\\
+			\hline
+			\end{tabular}
+			\end{center}
+	\end{flushleft}
+La norma dell'ultimo incremento è molto minore della norma dell'errore sull'approssimazione del risultato. Questo avviene grazie all'ordine di convergenza del metodo di Newton per sistemi non lineari (che è 2, infatti il metodo ha convergenza quadratica), che consente all'approssimazione del risultato di convergere rapidamente verso la soluzione esatta.

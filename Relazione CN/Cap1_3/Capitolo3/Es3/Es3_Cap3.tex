@@ -1,0 +1,18 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Scrivere una function Matlab che, avendo in ingresso un vettore \textbf{b} contenente i termini noti del sistema lineare \textbf{Ax = b} con A sdp e l'output dell'Algoritmo 3.6 del libro (matrice A riscritta nella porzione triangolare inferiore con i fattori L e D della fattorizzazione $LDL^{t}$ di A), ne calcoli efficientemente la soluzione.
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	Si vuole quindi risolvere il sistema Ax = b con A = $LDL^{t}$. Il seguente codice risolve tale sistema lineare efficientemente:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/solveLDLT.m}
+	Si fattorizza la matrice A di modo che questa venga riscritta nella porzione triangolare inferiore con i fattori L e D della fattorizzazione $LDL^{t}$. Dopo di che per risolvere il sistema Ax = b, ci riconduciamo a risolvere i seguenti sistemi lineari:\\[0.3cm]
+	$\bullet Ly = b$\\[0.1cm]
+	Si impiega l'algoritmo di risoluzione per matrici triangolari inferiori precedentemente utilizzato. Vale la pena notare che per estrarre la parte triangolare inferiore a diagonale unitaria si utilizza la funzione tril((A,-1) che restituisce sotto matrice strettamente inferiore rispetto alla diagonale e la si concatena con una matrice identità che permette cosi di ricostruire una matrice triangolare inferiore a diagonale unitaria.\\[0.3cm]
+	$\bullet Dz = y$\\[0.1cm]
+	Si calcola la soluzione del sistema dividendo ogni elemento di x (soluzione del precedente sistema) con il vettore riga contenente gli elementi della diagonale di A\\[0.3cm]
+	$\bullet L^{t} = z$\\[0.1cm]
+	Infine per ottenere la soluzione finale si ricava dalla matrice A la sotto matrice triangolare inferiore a diagonale unitaria con la stessa tecnica precedentemente utilizzata, calcolandone però la trasposta di modo da ricavare la sotto matrice triangolare superiore. Si invoca il seguente algoritmo per la sua risoluzione:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/trisolvesup.m}
+	\end{flushleft}

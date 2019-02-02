@@ -1,0 +1,26 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Sia $x = e \approx 2.7183 = \tilde{x}$. Si calcoli il corrispondente errore relativo $\epsilon_{x}$
+e il numero di cifre significative k con cui $\tilde{x}$ approssima x. Si verifichi
+che \\
+	\begin{center}
+	$|\epsilon_{x}|\approx \frac{1}{2}{10}^{-k} $
+	\end{center}
+	}
+}\\
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	L'errore relativo è definito come $|\epsilon_{x}| = \frac{|x-\hat{x}|}{|x|}$ , dalla quale ricavo la $\hat{x}$ come segue:\\
+	$\hat{x} = x(1+\epsilon_{x})$ e dunque $\frac{\hat{x}}{x} = 1+\epsilon_{x}$. Ciò ci suggerisce che l'errore relativo deve essere comparato a 1; esso sarà piccolo se si avvicina allo zero (ciò implica che il risultato approssimato sarà vicino al risultato esatto di un dato problema), viceversa un errore relativo vicino a 1 comporta una quasi totale perdita di informazione. Calcoliamo quindi l'errore relativo:
+	\begin{center}
+		$|\epsilon_{x}| = \frac{|e-2.7183|}{|e|} = 7.3576e - 06$
+	\end{center}
+	Calcoliamo adesso il numero di cifre significative, ricavabili dalla seguente formula $k \approx -\log_{10}(2|\epsilon_{x}|)$
+	\begin{center}
+		$k \approx -\log_{10}(2|\epsilon_{x}|) \Longrightarrow k \approx 4.8322 \approx 5$
+	\end{center}
+	Verifico ora che $|\epsilon_{x}|\approx \frac{1}{2}{10}^{-k} $. Infatti:
+	\begin{center}
+		$|\epsilon_{x}| \approx 5e-06$
+	\end{center}
+\end{flushleft}

@@ -1,0 +1,19 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Eseguire le seguenti istruzioni in Matlab:
+		\begin{center}
+		x = 0; count = 0;\\
+		$while x \sim 1$, x = x + delta, count = count + 1, end\\
+		\end{center}
+		dapprima ponendo $delta = \frac{1}{16}$ e poi ponendo $delta = \frac{1}{20}$. Commentare i risultati ottenuti e in particolare il non funzionamento del secondo caso.
+	
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.3cm]
+		\lstinputlisting[language=Matlab]{Codici/Cap1/esercizio5.m}
+		$\bullet$ Analizziamo il caso in cui $delta = \frac{1}{16}$\\[0.5cm]
+		Il programma termina correttamente poiche $delta = \frac{1}{16} = 0.0625$ e dopo 16 iterazioni il valore raggiunta da x è proprio 1, che rispecchia la condizione di uscita del ciclo while.\\[0.5cm]
+		$\bullet$Analizziamo il caso in cui $delta = \frac{1}{20}$\\[0.5cm]
+		In questo caso il programma non termina poiche il controllo sul ciclo while non viene verificato correttamente; infatti $delta = \frac{1}{20} = [0.05]_{10}$, che rappresentato in base 2 risulta $[0.00\overline{0011}]_{2} $. Questo fa si che l'operazione di somma ad ogni iterazione riguardi numeri periodici che essendo approssimati non raggiungeranno ma il valore x = 1, dunque il ciclo non terminerà mai. Una soluzione protrebbe essere quella di sostituire il controllo del while con uno piu efficiente, come: abs(x-1) > eps
+\end{flushleft}

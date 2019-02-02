@@ -1,0 +1,104 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Inserire alcuni esempi di utilizzo delle due function implementate per i punti 3 e 4, scegliendo per ciascuno di essi un vettore $\hat{x}$ e ponendo \textbf{b = A$\hat{x}$}. Riportare $\hat{x}$ e la soluzione \textbf{x} da essi prodotta. Costruire anche una tabella in cui, per ogni esempio considerato, si riportano il numero di condizionamento di A in norma 2 (usare cond di Matlab) e le quantità $\|r\|/\|b\|$ e $\|x-\hat{x}\|/\|\hat{x}\|$.
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	Si riporta in seguito il codice utilizzato per la risoluzione del problema. Questo contiene le chiamate delle funzioni precedentemente descritte nell'esercizio 3 e 4:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/soluzioneEs5Cap3.m}
+	$\bullet$ Esempio esercizio 3 ($A = LDL^{t}$)\\[0.1cm]
+		\begin{center}
+			$A = \begin{bmatrix}
+				11 & 4 & -2\\
+				6 & 7 & -1\\
+				5 & 1 & 12
+			\end{bmatrix}$, 
+			$\hat{x} = \begin{bmatrix}
+				64\\
+				8\\
+				13
+			\end{bmatrix}$, 
+			$A\hat{x} = b = \begin{bmatrix}
+				710\\
+				427\\
+				484
+			\end{bmatrix}$\\[0.1cm]
+			\end{center}
+			Dalla fattorizzazione A = $LDL^{t}$ ottengo:\\[0.5cm]
+			\begin{center}
+			$L = \begin{bmatrix}
+				1 & 0 & 0\\
+				0.5455 & 1 & 0\\
+				0.4545 & -0.4634 & 1
+			\end{bmatrix}$,
+			$D = \begin{bmatrix}
+				11 & 0 & 0\\
+				0 & 3.7273 & 0\\
+				0 & 0 & 8.9268
+			\end{bmatrix}$,
+			$L^{t} = \begin{bmatrix}
+				1 & 0.5455 & 0.4545\\
+				0 & 1 & -0.4634\\
+				0 & 0 & 1
+			\end{bmatrix}$\\[0.3cm]
+			\end{center}
+			\newpage
+			Dalla quale ricavo la soluzione:\\[0.5cm]
+			\begin{center}
+			$x = \begin{bmatrix}
+				44.4945\\
+				19.9863\\
+				20.1284
+			\end{bmatrix}$
+			\end{center}
+			$\bullet$ Esempio esercizio 4 (A = LU con pivoting)\\[0.1cm]
+			\begin{center}
+			$A = \begin{bmatrix}
+				11 & 4 & -2\\
+				6 & 7 & -1\\
+				5 & 1 & 12
+			\end{bmatrix}$, 
+			$\hat{x} = \begin{bmatrix}
+				64\\
+				8\\
+				13
+			\end{bmatrix}$, 
+			$A\hat{x} = b = \begin{bmatrix}
+				710\\
+				427\\
+				484
+			\end{bmatrix}$\\[0.1cm]
+			\end{center}
+			Dalla fattorizzazione A = LU con pivoting, si ottiene:\\[0.5cm]
+			\begin{center}
+			$L = \begin{bmatrix}
+				1 & 0 & 0\\
+				0.5455 & 1 & 0\\
+				0.4545 & -0.1698 & 1
+			\end{bmatrix}$,
+			$U = \begin{bmatrix}
+				11 & 4 & -2\\
+				0 & 4.8182 & 0.0909\\
+				0 & 0 & 12.9245
+			\end{bmatrix}$\\[0.5cm]
+			In questo caso non vengono effettuati scambi tra le righe, dunque il vettore b rimane invariato.
+			Si ottiene quindi il risultato:\\[0.5cm]
+			$x = \begin{bmatrix}
+				64\\
+				8.000000000000004\\
+				13.000000000000004
+			\end{bmatrix}$\\[0.5cm]
+			\end{center}
+			Di seguito si riporta in una tabella il numero di condizionamento di A in norma 2 e le quantità $\|r\|/\|b\|$ e $\|x-\hat{x}\|/\|\hat{x}\|$.\\[0.5cm]
+			\begin{center}
+				\begin{tabular}{| c | c | c | c |}
+					\hline
+						\textit{A} & $K_2(A)$ & $\frac{\|r\|}{\|b\|}$ & $\frac{\|x-\hat{x}\|}{\|\hat{x}\|}$ \\
+					\hline
+						$A= LDL^{t}$ & 4.1947 & 0.1931 & 0.3644\\
+						$A= LU$ & 4.1947 & 5.9241e-17 & 7.6363e-17\\
+					\hline
+				\end{tabular}
+			\end{center}
+\end{flushleft}

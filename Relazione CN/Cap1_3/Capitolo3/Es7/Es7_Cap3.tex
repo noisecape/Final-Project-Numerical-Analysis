@@ -1,0 +1,62 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Scrivere la function Matlab specifica per la risoluzione di un sistema lineare con matrice dei coefficienti $A \in R^{nxn}$ bidiagonale inferiore a diagonale unitaria di Toeplitz, specificabile con uno scalare $\alpha$. Sperimentarne e commentarne le prestazioni (considerare il numero di condizionamento della matrice) nel caso in cui $n$ = 12 e $\alpha = 100$ ponendo dapprima $b = (1,101,...101)^{T}$ (soluzione esatta $\hat{x} = (1,...,1)^{T})$ e quindi b = 0.1 * $(1,101,...,101)^{T})$ (soluzione esatta $\hat{x} = (0.1,...,0.1)^{T}$).
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	Si riporta in seguito il codice utilizzato per la risoluzione di un sistema lineare Ax = b, con $A \in R^{nxn}$ bidiagonale inferiore a diagonale unitaria di Toeplitz, che ha la seguente forma:
+	\begin{center}
+	$A = \begin{bmatrix}
+				1 & 0 & \ldots & \ldots & 0\\
+				\alpha & 1 & 0 & \ldots & 0\\
+				0 & \ddots & \ddots & \ddots & \vdots\\
+				\vdots & \ddots & \ddots & \ddots & \vdots\\
+				0 & \ldots & \ldots & \alpha & 1
+			\end{bmatrix}$\\[0.5cm]
+	\end{center}
+	\lstinputlisting[language=Matlab]{Codici/Cap3/trisolveInfAlphaToeplitz.m}
+	Il seguente codice invece riguarda la soluzione dell'esercizio:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/SoluzioneEs7Cap3.m}
+	\newpage
+	Si ottengono quindi i due vettori soluzione:\\[0.5cm]
+	\begin{center}
+	$x = \begin{bmatrix}
+				1\\
+				1\\
+				1\\
+				1\\
+				1\\
+				1\\
+				1\\
+				1\\
+				1\\
+				1\\
+				1\\
+				1\\
+			\end{bmatrix}$,
+			$x1 = \begin{bmatrix}
+				1.0000000000000000e-01\\
+				1.0000000000000014e-01\\
+				9.999999999985931e-02\\
+				1.000000000140702e-01\\
+				9.999999859298470e-02\\
+				1.000001407015319e-01\\
+				9.998592984681665e-02\\
+				1.014070153183369e-01\\
+				-4.070153183368319e-02\\
+				1.417015318336832e+01\\
+				-1.406915318336832e+03\\
+				1.407016318336832e+05\\
+			\end{bmatrix}$
+	\end{center}
+	Analizzando il condizionamento si nota che la matrice risulta essere mal condizionata, in quanto $condA = 1.0202e+24$ ovvero $k(A) >> 1$.\\
+	Ricordiamo che l'errore commesso sulla soluzione risulta:
+	\begin{center}
+		$\frac{\|\triangle x\|}{\|x\|} \leq \|A\| \cdot \|A^{-1}\| (\frac{\|\triangle b\|}{\|b\|}+\frac{\|\triangle A\|}{\|A\|})$.
+	\end{center}
+	Considerando l'errore commesso sulla soluzione nel primo caso ($b = (1,101,...101)^{T}$) si ha che il vettore risultato coincide con il vettore esatto che viene fornito dal testo dell'esercizio. Di conseguenza l'errore commesso è pari a zero. Nel secondo caso invece (b = 0.1 * $(1,101,...,101)^{T})$) la soluzione non coincide con la soluzione esatta fornita dal testo; calcolando l'errore sul risultato, questo risulta essere amplificato dal mal condizionamento della matrice:
+	\begin{center}
+	$errX = 1.7943e+08$
+	\end{center}
+\end{flushleft}

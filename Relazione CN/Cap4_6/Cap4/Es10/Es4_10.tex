@@ -1,0 +1,41 @@
+\begin{center}
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Stimare, nel senso dei minimi quadrati, posizione, velocit\'a iniziale ed accelerazione relative ad un moto rettilineo uniformemente accelerato per cui sono note le seguenti misurazioni dele coppie \((tempo, spazio)\):\\
+	\((1, 2.9) \quad (1, 3.1)\quad (2, 6.9) \quad (2, 7.1) \quad (3, 12.9) \quad (3, 13.1) \quad (4, 20.9) \quad (4, 21.1) \quad (5, 30.9) \quad (5, 31.1)\)
+	}
+}\end{center}
+
+\noindent La legge che descrive il fenomeno del moto rettilineo uniformemente accelerato si pu\'o scrivere in forma polinomiale come segue:
+
+\[
+y =  s(t) = x_0 + v_0t + a_0t^2 \quad \quad \text{con } a_0 = \frac{1}{2}a
+\]
+
+\noindent Il cui grado è n = 2. Il sistema ha soluzione se si ha almeno n+1 punti distinti.
+In questo caso il problema \'e ben posto poich\'e i punti distinti sono 5>3.
+
+\noindent Si vuole quindi stimare nel senso dei minimi quadrati: posizione, velocità iniziale, ed accelerazione, che equivale alla risoluzione del sistema lineare sovradeterminato:
+\[
+V\underline{a}=\underline{y}
+\]
+
+\noindent con $V$ matrice di tipo \textit{Vandermonde} (la trasposta di una matrice di tipo Vandermonde), \underline{a} vettore delle incognite e  \underline{y} il vettore dei valori misurati. \\
+\noindent Tale sistema si risolve mediante fattorizzazione \textit{QR}. La matrice $V$ è scritta come segue: 
+
+\[
+V=\begin{bmatrix}
+x_0^0 & x_0^1 & \cdots & x_0^m \\
+x_1^0 & x_1^1 & \cdots & x_1^m \\
+\vdots & \vdots & & \vdots \\
+x_n^0 & x_n^1 & \cdots & x_n^m \\		
+\end{bmatrix}
+\]
+\vspace*{0.5cm}
+
+\lstinputlisting[language=Matlab]{Codici/Cap4/SoluzioneEs10_Cap4.m}
+
+\noindent Le soluzioni, calcolate, al problema dato sono :
+\begin{center}
+	$x_0 = 1$, $v_0 = 1$, $a_0 = 1$ 
+\end{center}

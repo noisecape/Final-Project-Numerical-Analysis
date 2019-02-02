@@ -1,0 +1,71 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{import}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{tabu}
+\usepackage{listings}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{titling}
+\usepackage{listingsutf8}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage{amsmath}
+\usepackage{animate}
+\usepackage[labelformat=empty]{caption}
+\usepackage{subfig}
+
+\let\ph\mlplaceholder
+\lstMakeShortInline"
+
+\newcommand{\bnb}{\begin{nobreak}}
+\newcommand{\enb}{\end{nobreak}}
+
+\lstset{
+	style              = Matlab-editor,
+	basicstyle         = \mlttfamily,
+	escapechar         = ",
+	mlshowsectionrules = true,
+}
+
+\title{\vspace{2cm}Elaborato di\\ \textbf{Calcolo Numerico}\\ Anno Accademico 2017/2018\vspace{1cm}}
+
+
+
+\begin{document}
+	
+	\pagenumbering{Roman}
+	\lstset{inputencoding=latin1}
+	
+	\maketitle
+	
+	\begin{center}
+		\today{}
+	\end{center}
+	
+	\newpage
+	
+	\newpage
+	
+	\tableofcontents
+	\newpage
+	
+	\pagenumbering{arabic}
+	
+	\input{Cap4/Cap4.tex}
+	\newpage
+	\input{Cap6/Cap6.tex}
+    \newpage
+
+	
+\end{document}

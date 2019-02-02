@@ -1,0 +1,25 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Si dia una maggiorazione del valore assoluto dell'errore relativo con cui $x+y+z$ viene approssimato dall'approssimazione prodotta dal calcolatore, ossia $(x\oplus y)\oplus z$ (supporre che non ci siano problemi di overflow o di underflow). Ricavare l'analoga maggiorazione anche per $x\oplus (y\oplus z)$ tenendo presente che $x\oplus (y\oplus z)$ = $(x\oplus y)\oplus z$.
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.3cm]
+	Ricavo la maggiorazione del valore assoluto dell'errore di $(x\oplus y)\oplus z$:\\[0.3cm]
+	\begin{Large}$\epsilon = \frac{(1 + \epsilon_{2})[(1+\epsilon_{1})(x(1+\epsilon_{x})+y(1+\epsilon_{y}))+z(1+\epsilon_{z})]-(x+y+z)}{x+y+z}$ = \\[0.3cm]
+	$\frac{(1+\epsilon_{2}) \{[(1+ \epsilon_{1})(x+x\epsilon_{x}+y+y\epsilon_{y})]+z+z\epsilon_{z}\}-x-y-z}{x+y+z}$ = \\[0.3cm]
+	$\frac{(1+ \epsilon_{2})\{x+x\epsilon_{x}+y+y\epsilon_{y}+x\epsilon_{1}+x\epsilon_{x}\epsilon_{1}+y\epsilon_{1}+y\epsilon_{y}\epsilon_{1}+z+z\epsilon_{z}\}-x-y-z}{x+y+z}$\\[0.3cm]
+	$\frac{(1+\epsilon_{2}\{x(1+\epsilon_{x}+\epsilon_{1}+\epsilon_{x}\epsilon_{1})+y(1+\epsilon_{y}+\epsilon_{1}+\epsilon_{y}\epsilon_{1})+z(1+\epsilon_{z})\}-x-y-z}{x+y+z}$\\[0.3cm]
+	$\frac{(x+x\epsilon_{2})(1+\epsilon_{x}+\epsilon_{1}+\epsilon_{x}\epsilon_{1})+(x+y\epsilon_{2})(1+\epsilon_{y}+\epsilon_{1}+\epsilon_{y}\epsilon_{1})+(z+z\epsilon_{2})(1+\epsilon_{z})-x-y-z}{x+y+z}$\\[0.3cm]
+	$\leq |\frac{x\epsilon_{x}+y\epsilon_{y}+z\epsilon_{z}+x\epsilon_{1}+y\epsilon_{1}+x\epsilon_{2}+y\epsilon_{2}+z\epsilon_{2}}{x+y+z}| =$
+	$ |\frac{x\epsilon_{x}+y\epsilon_{y}+z\epsilon_{z}+\epsilon_{1}(x+y)+\epsilon_{2}(z+y+z)}{x+y+z}|$ \\[0.3cm]
+	$\leq \frac{|x| |\epsilon_{x}| + |y| |\epsilon_{y} | + |z| |\epsilon_{z}| + |\epsilon_{1}| |x+y| + |\epsilon_{2}| |x+y+z|}{|x+y+z|}$ \\[0.3cm]
+	$\leq \frac{\epsilon_{m}(|x|+|y|+|z|)+|x+y|+|x+y+z|}{|x+y+z|} = \epsilon_{m}(\frac{|x|+|y|+|z|}{|x+y+z|}+|\frac{|x+y|}{|x+y+z|}+1)$
+	\end{Large}\\[0.3cm]
+	Per ricavare la maggiorazione del valore assoluto dell'errore di $x\oplus (y\oplus z)$ è necessario scambiare al posto della x la lettera z, e si otterrà l'analoga maggiorazzione:\\[0.3cm]
+	\begin{large}
+		$\epsilon_{m}(\frac{|x|+|y|+|z|}{|x+y+z|}+|\frac{|z+y|}{|x+y+z|}+1)$\\[0.3cm]
+		Otteniamo quindi che i valori degli errori $\varepsilon_{1}$ e $\varepsilon_{2}$ sono condizionati rispettivamente, dai valori $\frac{|x+y|}{|x+y+z|}$ e $\frac{|y+z|}{|y+z+x|}$.
+
+	\end{large}
+\end{flushleft}

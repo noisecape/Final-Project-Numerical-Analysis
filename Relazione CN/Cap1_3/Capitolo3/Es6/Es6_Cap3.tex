@@ -1,0 +1,48 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Sia $A = \begin{bmatrix}
+				\epsilon & 1\\
+				1 & 1
+			\end{bmatrix}$ con $\epsilon = 10^{-13}$. Definire L triangolare inferiore a diagonale unitaria e U triangolare superiore in modo che il prodotto LU sia la fattorizzazione LU di A e, posto b = Ae, con $e = (1,1)^{T}$, confrontare l'accuratezza della soluzione che si ottiene usando il comando $U \backslash(L \backslash b)$ (Gauss senza pivoting) e il comando $A \backslash b $(Gauss con pivoting),
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	Con il seguente codice si effettua la fattorizzazione A = LU:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/luFactorization.m}
+	Si richiama inoltre il seguente codice Matlab per effettuare la chiamata alla funzione $luFactorization(A)$, ricavare quindi la sottomatrice triangolare inferiore a diagonale unitaria (L) e la sottomatrice triangolare superiore (U); si assegna a b la quantità Ae ed infine si confrontano i risultati usando prima Gauss senza pivoting e poi Gauss con pivoting.
+	\lstinputlisting[language=Matlab]{Codici/Cap3/SoluzioneEs6Cap3.m}
+	Dalla fattorizzazione si ottiene:\\[0.5cm]
+	\begin{center}
+	$A = \begin{bmatrix}
+				1.0000e-13 & 1\\
+				1.0000e+13 & -1.0000e+13
+			\end{bmatrix}$,
+			$L = \begin{bmatrix}
+				1& 0\\
+				1.0000e+13 & 1
+			\end{bmatrix}$,
+			$U = \begin{bmatrix}
+				1.0000e-13 & 1\\
+				0 & -1.0000e+13
+			\end{bmatrix}$\\[0.5cm]
+			\end{center}
+			Calcolando il vettore b = Ae si ottiene:\\[0.5cm]
+			\begin{center}
+			$ b = \begin{bmatrix}
+				1.000000000000100\\
+				1
+			\end{bmatrix}$\\[0.5cm]
+			Infine si ottengono i due vettori rispettivamente di Gauss senza pivoting e Gauss con pivoting:\\[0.5cm]
+			$ gSp = \begin{bmatrix}
+				0\\
+				1.000000000000100
+			\end{bmatrix}$, 
+			$ gp = \begin{bmatrix}
+				1\\
+				1
+			\end{bmatrix}$
+			\end{center}
+			Dunque si nota come Gauss con pivoting sia piu accurato rispetto a Gauss senza pivoting.
+	\end{flushleft}
+	

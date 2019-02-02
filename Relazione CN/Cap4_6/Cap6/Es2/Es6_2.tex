@@ -1,0 +1,41 @@
+\begin{center}
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+    Utilizzare il metodo delle potenze per calcolarne l'autovalore dominante della matrice $A_n$ del precedente esercizio, con una approssimazione $tol=10^{-5}$, partendo da un vettore con elementi costanti. Riempire, quindi, la seguente tabella: \\ \begin{center}
+  \begin{tabular}{ | l | c | r |}
+    \hline
+    $n$ & \textit{numero iterazioni effettuate} & \textit{stima autovalore} \\ \hline
+    100 &  &  \\ 
+    200 &  &  \\ 
+    \vdots &  &  \\  
+	1000 &  &  \\
+    \hline
+  \end{tabular}
+\end{center}
+}
+}\end{center}
+\noindent Di seguito sono riportati i codici implementati. La funzione \textit{potenze} calcola sia l'autovalore dominante della matrice \textit{A} , sia il numero di iterazioni, \textit{numIt }, impiegate.
+\vspace{0.5cm}
+
+\lstinputlisting[language=Matlab]{Codici/Cap6/SoluzioneEs2_Cap6.m}
+\lstinputlisting[language=Matlab]{Codici/Cap6/potenze.m}
+
+\noindent Nella seguente tabella \'e possibile visualizzare i risultati ottenuti: 
+
+\begin{center}
+	\begin{tabular}{ | l | c | c |}
+		\hline
+		$n$ & \textit{numero iterazioni effettuate} & \textit{stima autovalore} \\ \hline
+		$100$ & $167$ & $7.8224$ \\
+		$200$ & $420$ & $7.8803$ \\
+		$300$ & $638$ & $7.8916$ \\
+		$400$ & $721$ & $7.8949$ \\
+		$500$ & $743$ & $7.8964$ \\
+		$600$ & $824$ & $7.8974$ \\
+		$700$ & $893$ & $7.8976$ \\
+		$800$ & $868$ & $7.8967$ \\
+		$900$ & $795$ & $7.8957$ \\
+		$1000$ & $775$ & $7.8954$ \\
+		\hline
+	\end{tabular}
+\end{center}

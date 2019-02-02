@@ -1,0 +1,27 @@
+\large\noindent\fbox{
+	\parbox{\textwidth}{
+	Scrivere una function Matlab per la risoluzione di un sistema lineare con matrice dei coefficienti triangolare inferiore a diagonale unitaria. Inserire un esempio di utilizzo.
+	}
+}
+\begin{flushleft}
+	\large \textbf{Soluzione}\\[0.5cm]
+	Il seguente codice riguarda la risoluzione di un sistema triangolare inferiore a diagonale unitaria:
+	\lstinputlisting[language=Matlab]{Codici/Cap3/trisolveInf.m}
+	Un esempio di utilizzo è dato dalla seguente matrice A, e vettore dei termini noti b:\\
+		\begin{center}
+			$A = \begin{bmatrix}
+				1 & 0 & 0\\
+				2 & 1 & 0\\
+				3 & 2 & 1
+			\end{bmatrix}\quad
+			b = \begin{bmatrix}
+				1\\
+				2\\
+				3\end{bmatrix}$\\
+				E si ottiene il seguente vettore soluzione:
+					$x = \begin{bmatrix}
+					1\\
+					0\\
+					0\end{bmatrix}$\\
+			\end{center}
+\end{flushleft}

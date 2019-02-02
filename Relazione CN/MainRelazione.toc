@@ -1,0 +1,49 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}\textbf {Capitolo}}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}}{5}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}}{6}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}}{7}{subsection.1.6}
+\contentsline {section}{\numberline {2}\textbf {Capitolo}}{10}{section.2}
+\contentsline {subsection}{\numberline {2.1}}{10}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}}{14}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}}{19}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}}{25}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}}{27}{subsection.2.5}
+\contentsline {section}{\numberline {3}\textbf {Capitolo}}{30}{section.3}
+\contentsline {subsection}{\numberline {3.1}}{30}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}}{32}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}}{35}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}}{38}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}}{40}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}}{43}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}}{45}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}}{49}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.9}}{51}{subsection.3.9}
+\contentsline {subsection}{\numberline {3.10}}{53}{subsection.3.10}
+\contentsline {subsection}{\numberline {3.11}}{55}{subsection.3.11}
+\contentsline {section}{\numberline {4}\textbf {Capitolo 4}}{57}{section.4}
+\contentsline {subsection}{\numberline {4.1}}{57}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}}{58}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}}{59}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}}{61}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}}{64}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}}{72}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}}{72}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}}{76}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}}{79}{subsection.4.9}
+\contentsline {subsection}{\numberline {4.10}}{83}{subsection.4.10}
+\contentsline {section}{\numberline {5}\textbf {Capitolo}}{85}{section.5}
+\contentsline {subsection}{\numberline {5.1}}{85}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}}{86}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}}{87}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}}{88}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}}{90}{subsection.5.5}
+\contentsline {section}{\numberline {6}\textbf {Capitolo}}{93}{section.6}
+\contentsline {subsection}{\numberline {6.1}}{93}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}}{94}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}}{97}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}}{100}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}}{103}{subsection.6.5}
